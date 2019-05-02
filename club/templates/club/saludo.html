@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Saludo</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'club/site.css' %}" />
+    </head>
+    <body>
+        <span class="mensaje">Hola por aquí, {{ nombre }}!</strong> Son las {{ fecha | date:'l, d F, Y' }} at {{ fecha | time:'H:i:s' }}
+    </body>
+</html>
