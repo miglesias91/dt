@@ -18,3 +18,15 @@ def saludo(request, nombre):
             'fecha' : datetime.now()
         }
     )
+
+def torneos(request):
+    return render(
+        request,
+        'club/torneos.html'
+    )
+
+def equipo(request):
+    return render(
+        request,
+        'club/equipo.html'
+    )
