@@ -3,5 +3,30 @@
 Tachito
 {% endblock %}
 {% block content %}
-<p>Este es el glorioso Club Social y Deportivo Tachito</p>
+<h2>Estos son los mensajes que nos van dejando</h2>
+
+{% if message_list %}
+    <table class="message_list">
+        <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Mensaje</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for message in message_list %}
+            <tr>
+                <td>{{ message.log_date | date:'d M Y' }}</td>
+                <td>{{ message.log_date | time:'H:i:s' }}</td>
+                <td>
+                    {{ message.mensaje }}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No hay ningun mensaje por el momento, dejanos el tuyo <a href="{% url 'log' %}">ACA</a>!.</p>
+{% endif %}
 {% endblock %}
