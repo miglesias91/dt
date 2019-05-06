@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
+    path('', include("noticias.urls")),
     path('', include("club.urls")),
     path('admin/', admin.site.urls),
 ]
