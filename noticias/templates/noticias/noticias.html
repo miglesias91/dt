@@ -1,0 +1,21 @@
+{% extends "club/layout.html" %}
+{% block title %}
+Noticias
+{% endblock %}
+{% block content %}
+
+{% if object_list %}
+
+<ul class="list-group list-group-flush">
+    {% for noticia in object_list %}
+    <li class="list-group-item py-1">
+        <h3><a href="{% url 'nota' noticia.slug %}">{{ noticia.titulo }}</a></h3>
+        <h6>{{ noticia.fecha | date:"Y/M/d"  }} | {{ noticia.autor }}</h6>
+        <p>{{ noticia.copete }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+    <p>No hay ninguna noticia por el momento.</p>
+{% endif %}
+{% endblock %}
