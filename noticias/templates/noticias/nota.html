@@ -1,13 +1,29 @@
-{% extends "club/layout.html" %}
+{% extends "club/layout_3cols.html" %}
 {% block title %}
 {{ nota.titulo }}
 {% endblock %}
-{% block content %}
 
-<h5>{{ nota.fecha | date:"Y/m/D" }}</h5>
-<h1>{{ nota.titulo }}</h1>
-<h5>{{ nota.autor }}</h5>
-<h2>{{ nota.copete }}</h2>
-<p>{{ nota.texto}}</p>
+{% block col-left %}
+{% endblock %}
+{% block col-center %}
+
+<h6 class="text-left">{{ nota.fecha | date:"Y/M/d" }}</h6>
+<h1 class="text-left font-weight-bold">{{ nota.titulo }}</h1>
+<h6 class="text-left font-italic">{{ nota.autor }}</h6>
+<h5 class="text-left font-weight-light">{{ nota.copete }}</h5>
+<p class="text-left">{{ nota.texto}}</p>
+
+<hr/>
+<h3>Comentarios</h3>
+
+<hr/>
+
+<h3>Comentá</h3>
 
 {% endblock %}
+{% block col-right %}
+
+{% endblock %}
+<hr/>
+
+<h3>Comentarios</h3>

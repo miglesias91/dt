@@ -6,6 +6,7 @@ Noticias
 
 {% if object_list %}
 
+<div class="container">
 <ul class="list-group list-group-flush">
     {% for noticia in object_list %}
     <li class="list-group-item py-1">
@@ -18,4 +19,5 @@ Noticias
 {% else %}
     <p>No hay ninguna noticia por el momento.</p>
 {% endif %}
+</div>
 {% endblock %}
